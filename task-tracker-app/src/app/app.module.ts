@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-// import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-// import { DialogComponent } from './dialog/dialog.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HeaderComponent } from './header/header.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
 
 @NgModule({
-  declarations: [AppComponent, ToDoItemComponent],
+  declarations: [AppComponent, ToDoItemComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -20,6 +20,8 @@ import { ToDoItemComponent } from './to-do-item/to-do-item.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+	FormsModule,
+	MatButtonModule,
   ],
   bootstrap: [AppComponent],
 })
