@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
+import { IToDoItem } from './to-do-item.model';
+
+// import { MatDialog } from '@angular/material/dialog';
+// import { DialogComponent } from './dialog/dialog.component';
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +11,22 @@ import { DialogComponent } from './dialog/dialog.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'task-tracker-app';
-  constructor (private dialog : MatDialog) {
-	
-}
-
-openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent, {width:'30%'});
-  }
-  
-  
+  title = 'Task Tracker App';
+  toDoList: IToDoItem[] = [
+	{
+		title: 'Go shopping',
+		isComplete: false,
+		dateCreated: new Date(),
+	},
+	{
+		title: 'Put shopping away',
+		isComplete: false,
+		dateCreated: new Date(),
+	},
+	{
+		title: 'Cook dinner',
+		isComplete: false,
+		dateCreated: new Date(),
+	}
+]
 }

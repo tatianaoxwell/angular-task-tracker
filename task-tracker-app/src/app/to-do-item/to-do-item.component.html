@@ -1,1 +1,5 @@
-<p>to-do-item works!</p>
+<div *ngIf="toDoItem">
+	<span>{{toDoItem.isComplete}}</span>
+	<span>{{toDoItem.title}}</span>
+	<span>{{toDoItem.dateCreated | date}}</span>
+</div>

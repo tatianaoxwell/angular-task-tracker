@@ -1,38 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DialogComponent } from './dialog/dialog.component';
+// import { DialogComponent } from './dialog/dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
-import { NewToDoItemComponent } from './new-to-do-item/new-to-do-item.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-	DialogComponent,
- ToDoItemComponent,
- NewToDoItemComponent,
-  ],
+  declarations: [AppComponent, ToDoItemComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-	MatToolbarModule,
-	MatIconModule,
-	BrowserAnimationsModule,
-	MatButtonModule,
-	MatDialogModule,
-	MatFormFieldModule,
-	MatInputModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

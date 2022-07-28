@@ -1,10 +1,27 @@
-<mat-toolbar color="primary">
+<div class="container">
+	<h1>{{title}}</h1>
+	<form class="example-form">
+		<div *ngFor="let item of toDoList">
+			<app-to-do-item [toDoItem]="item"></app-to-do-item>
+		</div>
+
+		<mat-form-field class="example-full-width" appearance="fill">
+			<mat-label></mat-label>
+			<input matInput placeholder="Add New Task">
+		</mat-form-field>
+	</form>
+	<div class="example-button-row">
+		<button mat-raised-button color="primary">Add</button>
+	</div>
+
+	<!-- <router-outlet></router-outlet> -->
+</div>
+
+<!-- <mat-toolbar color="primary">
 	<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
 		<mat-icon>supervisor_account</mat-icon>
 	</button>
 	<span>Task Tracker App</span>
 	<span class="example-spacer"></span>
 	<button mat-raised-button color="warn" (click)="openDialog()">Add New Task</button>
-</mat-toolbar>
-
-<router-outlet></router-outlet>
+</mat-toolbar> -->

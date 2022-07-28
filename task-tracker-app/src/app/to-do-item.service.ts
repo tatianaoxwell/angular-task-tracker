@@ -4,6 +4,7 @@ import { IToDoItem } from './to-do-item.model';
 @Injectable({
   providedIn: 'root'
 })
+@Injectable()
 export class ToDoItemService {
 toDoList: IToDoItem[] = [
 	{
