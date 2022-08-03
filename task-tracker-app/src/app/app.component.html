@@ -1,6 +1,10 @@
 <div class="container">
-<app-header [title]="title"></app-header>
+	<app-header [title]="title"></app-header>
 	<form class="form-control">
+			<div>Filter By:</div>
+			<div><input type="search" placeholder="search for tasks"
+			[(ngModel)]="filterBy"></div>
+			<div>Filtered By: {{filterBy}} </div>
 		<div *ngFor="let toDoItem of toDoList">
 			<app-to-do-item [toDoItem]="toDoItem"></app-to-do-item>
 		</div>
@@ -9,10 +13,9 @@
 				<mat-label>Add New Task</mat-label>
 				<input matInput>
 			</mat-form-field>
-		<button mat-flat-button color="primary">Add</button>
-</div>
+			<button mat-flat-button color="primary">Add</button>
+		</div>
 	</form>
-	
-<!-- <router-outlet></router-outlet> -->
-</div>
 
+	<!-- <router-outlet></router-outlet> -->
+</div>

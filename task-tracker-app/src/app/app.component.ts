@@ -8,6 +8,7 @@ import { IToDoItem } from './to-do-item.model';
 })
 export class AppComponent {
   title: string = 'Task Tracker App';
+  filterBy: string = '';
   toDoList: IToDoItem[] = [
 	{
 		title: 'Go shopping',
