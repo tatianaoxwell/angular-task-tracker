@@ -3,9 +3,9 @@
 	<form class="form-control">
 			<div>Filter By:</div>
 			<div><input type="search" placeholder="search for tasks"
-			[(ngModel)]="filterBy"></div>
-			<div>Filtered By: {{filterBy}} </div>
-		<div *ngFor="let toDoItem of toDoList">
+			[(ngModel)]="listFilter"></div>
+			<div>Filtered By: {{listFilter}} </div>
+		<div *ngFor="let toDoItem of filteredList">
 			<app-to-do-item [toDoItem]="toDoItem"></app-to-do-item>
 		</div>
 		<div class="input-button-row">
