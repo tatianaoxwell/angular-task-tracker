@@ -12,11 +12,19 @@ export class AppComponent implements OnInit {
 
   toDoList: IToDoItem[] = [];
 
+  inputTodo: string = '';
+
   constructor(private toDoItemService: ToDoItemService) {}
 
   ngOnInit(): void {
     this.toDoList = this.toDoItemService.getToDoList();
   }
-  onClick() {
-  }
+ addTodo() {
+	this.toDoList.push({
+		title: this.inputTodo,
+		isComplete: false,
+		dateCreated: new Date()
+	});
+	this.inputTodo = '';
+ }
 }
