@@ -1,29 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IToDoItem } from './to-do-item.model';
+import { ToDoItemService } from './to-do-item.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string = 'Task Tracker App';
-  
-  toDoList: IToDoItem[] = [
-    {
-      title: 'Go shopping',
-      isComplete: false,
-      dateCreated: new Date(),
-    },
-    {
-      title: 'Put shopping away',
-      isComplete: false,
-      dateCreated: new Date(),
-    },
-    {
-      title: 'Cook dinner',
-      isComplete: true,
-      dateCreated: new Date(),
-    },
-  ];
+
+  toDoList: IToDoItem[] = [];
+
+  constructor(private toDoItemService: ToDoItemService) {}
+
+  ngOnInit(): void {
+    this.toDoList = this.toDoItemService.getToDoList();
+  }
+  onClick() {
+  }
 }
