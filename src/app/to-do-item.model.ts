@@ -1,5 +1,6 @@
 export interface IToDoItem {
-	title: string;
+	id?: number;
+	name: string;
 	isComplete: boolean;
-	dateCreated: Date;
+	dateCreated?: Date;
 }

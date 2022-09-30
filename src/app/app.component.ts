@@ -9,22 +9,20 @@ import { ToDoItemService } from './to-do-item.service';
 })
 export class AppComponent implements OnInit {
   title: string = 'Task Tracker App';
+toDoList: IToDoItem[] | undefined;
 
-  toDoList: IToDoItem[] = [];
-
-  inputTodo: string = '';
+inputTodo: string = '';
+  
 
   constructor(private toDoItemService: ToDoItemService) {}
 
   ngOnInit(): void {
-    this.toDoList = this.toDoItemService.getToDoList();
+    // this.toDoList = this.toDoItemService.getToDoList();
   }
- addTodo() {
-	this.toDoList.push({
-		title: this.inputTodo,
-		isComplete: false,
-		dateCreated: new Date()
+  addTodo() {
+	this.toDoItemService.addTodoItem({
+		name: this.inputTodo,
+		isComplete: false
 	});
-	this.inputTodo = '';
- }
+  }
 }
