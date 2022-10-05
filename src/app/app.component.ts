@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IToDoItem } from './to-do-item.model';
-import { ToDoItemService } from './to-do-item.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,21 +7,12 @@ import { ToDoItemService } from './to-do-item.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title: string = 'Task Tracker App';
-toDoList: IToDoItem[] | undefined;
+  title: string = 'My Tasks';
+ 
 
-inputTodo: string = '';
-  
-
-  constructor(private toDoItemService: ToDoItemService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    // this.toDoList = this.toDoItemService.getToDoList();
   }
-  addTodo() {
-	this.toDoItemService.addTodoItem({
-		name: this.inputTodo,
-		isComplete: false
-	});
-  }
+  
 }

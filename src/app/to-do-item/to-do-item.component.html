@@ -1,9 +1,0 @@
-
-<div *ngIf="!!toDoItem">
-	<mat-checkbox class="example-margin" [(ngModel)]="toDoItem.isComplete"><span>{{toDoItem.name}}</span></mat-checkbox>
-	<span>{{toDoItem.dateCreated | date}}</span>
-	<button md-button (click)="removeItem(toDoItem)">
-		<mat-icon>delete_forever</mat-icon>
-	  </button>
-</div>
-

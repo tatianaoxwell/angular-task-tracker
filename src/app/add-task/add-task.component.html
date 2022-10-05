@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Task Details</h1>
+<div mat-dialog-content>
+	<mat-form-field appearance="outline">
+		<mat-label>Task title</mat-label>
+		<input matInput placeholder="Title">
+	</mat-form-field>
+	<mat-form-field appearance="outline">
+		<mat-label>Task priority</mat-label>
+		<mat-select placeholder="Category">
+			<mat-option value="Electronics">High</mat-option>
+			<mat-option value="Clothing">Medium</mat-option>
+			<mat-option value="Kitchen">Low</mat-option>
+		</mat-select>
+	</mat-form-field>
+	<mat-form-field appearance="outline">
+		<mat-label>Due date</mat-label>
+		<input matInput [matDatepicker]="picker">
+		<mat-hint>MM/DD/YYYY</mat-hint>
+		<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+		<mat-datepicker #picker></mat-datepicker>
+	</mat-form-field>
+</div>
+<mat-dialog-actions >
+    <button class="mat-raised-button" (click)="onClose()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="onSave()">Save</button>
+</mat-dialog-actions>
