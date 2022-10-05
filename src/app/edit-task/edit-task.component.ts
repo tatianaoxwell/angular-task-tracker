@@ -4,19 +4,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-task',
   templateUrl: './edit-task.component.html',
-  styleUrls: ['./edit-task.component.scss']
+  styleUrls: ['./edit-task.component.scss'],
 })
 export class EditTaskComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onSave() {
+    console.log('');
   }
-  onAdd() {
-	console.log('');
-}
-onSave(){
-	this.router.navigate(['/dashboard']);
-	
-}
+  onClose() {
+    this.router.navigate(['/dashboard']);
+  }
 }

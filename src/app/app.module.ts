@@ -19,9 +19,10 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, AddTaskComponent],
+  declarations: [AppComponent, DashboardComponent, AddTaskComponent, EditTaskComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
