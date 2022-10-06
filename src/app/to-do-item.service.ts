@@ -13,13 +13,26 @@ export class ToDoItemService {
   constructor(private http: HttpClient) {}
   private apiURL = 'http://localhost:3000/';
 
-/**Read/GET */
+  /**Read/GET */
+  getToDoList(): Observable<IToDoItem[]> {
+    return this.http.get<IToDoItem[]>(`${this.apiURL}todo?id=1`);
+  }
 
-getToDoList(): Observable<IToDoItem[]>{
-	return this.http.get<IToDoItem[]>(`${this.apiURL}todo?id=1`);
+  getToDoById(id: number): Observable<IToDoItem> {
+    return this.http.get<IToDoItem>(`${this.apiURL}todo?id=${id}`);
+  }
+
+
+/** Create/POST */
+addToDo(newToDo: IToDoItem): Observable<IToDoItem> {
+return this.http.post<IToDoItem>(`${this.apiURL}todo?id=1`, newToDo);
 }
 
+
 }
+
+
+
 
 //   // Create/Post
 //   addTodoItem(inputTodo: IToDoItem): Observable<void> {

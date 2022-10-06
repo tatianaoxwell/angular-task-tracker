@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>ADD TASK</h1>
 <div mat-dialog-content>
-	<mat-form-field appearance="outline">
+	<mat-form-field [formGroup]="addToDoForm" appearance="outline">
 		<mat-label>Task title</mat-label>
-		<input matInput placeholder="Title">
+		<input class="form-control" matInput placeholder="Title" formControlName="name">
 	</mat-form-field>
 	<!-- <mat-form-field appearance="outline">
 		<mat-label>Task priority</mat-label>
@@ -21,6 +21,6 @@
 	</mat-form-field> -->
 </div>
 <mat-dialog-actions >
-    <button class="mat-raised-button" (click)="onClose()">Close</button>
-    <button class="mat-raised-button mat-primary"(click)="onAdd()">Save</button>
+    <button class="mat-raised-button">Close</button>
+    <button type="button" class="mat-raised-button mat-primary" (click)="onAdd()">Save</button>
 </mat-dialog-actions>
