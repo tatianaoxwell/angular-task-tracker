@@ -28,6 +28,10 @@ addToDo(newToDo: IToDoItem): Observable<IToDoItem> {
 return this.http.post<IToDoItem>(`${this.apiURL}todo?id=1`, newToDo);
 }
 
+/** Update/POST */
+updateToDo(updateToDo: IToDoItem): Observable<void>{
+return this.http.post<void>(`${this.apiURL}todo/${updateToDo.id}`, updateToDo);
+}
 
 }
 
