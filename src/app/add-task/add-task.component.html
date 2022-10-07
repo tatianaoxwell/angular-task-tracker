@@ -21,6 +21,6 @@
 	</mat-form-field> -->
 </div>
 <mat-dialog-actions >
-    <button class="mat-raised-button">Close</button>
-    <button type="button" class="mat-raised-button mat-primary" (click)="onAdd()">Save</button>
+    <button type="button" class="mat-raised-button" (click)="onClose()" >Close</button>
+    <button type="button" class="mat-raised-button mat-primary" [disabled]="!addToDoForm.valid" (click)="onAdd()">Save</button>
 </mat-dialog-actions>

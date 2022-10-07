@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { IToDoItem } from '../to-do-item.model';
 import { ToDoItemService } from '../to-do-item.service';
 
@@ -13,13 +13,13 @@ import { ToDoItemService } from '../to-do-item.service';
 })
 export class AddTaskComponent implements OnInit {
   addToDoForm!: FormGroup;
-  isDirty: boolean = true;
   constructor(
     private toDoItemService: ToDoItemService,
     private router: Router
   ) {}
-  get title(): FormControl {
-    return this.addToDoForm.controls['title'] as FormControl;
+
+  get name(): FormControl {
+    return this.addToDoForm.controls['name'] as FormControl;
   }
 
   ngOnInit(): void {
@@ -29,6 +29,7 @@ export class AddTaskComponent implements OnInit {
       isComplete: new FormControl(false),
     });
   }
+
   // onAdd(){
   //   console.log(this.addToDoForm.getRawValue());
   // }
@@ -44,16 +45,22 @@ export class AddTaskComponent implements OnInit {
       isComplete: false,
     };
     return this.toDoItemService.addToDo(newItem).pipe(
-      tap((result: IToDoItem) => this.saveSuccess(result))
+      tap((result: IToDoItem) => this.saveSuccess(result)),
+      catchError(this.handleError<IToDoItem>('addToDo'))
     );
   }
+  private saveSuccess(newItem: IToDoItem): void {
+    console.log('newToDo added: ', newItem);
+    this.router.navigate(['/dashboard']);
+  }
 
-private saveSuccess(newItem: IToDoItem): void {
-        console.log('newToDo added: ', newItem);
-		this.isDirty = false;
-		this.router.navigate(['/dashboard']);
-}
   onClose() {
     this.router.navigate(['/dashboard']);
+  }
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
   }
 }

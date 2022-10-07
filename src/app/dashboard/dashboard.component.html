@@ -13,10 +13,10 @@
 			<span> {{toDo.name}}</span>
 			<br>
 			<span>  Date created: {{toDo.createdAt | date}}</span>
-			<button mat-raised-button color="primary" [routerLink]="['/edittask', toDo.id]" >Edit
+			<button class="modify" mat-raised-button color="primary" [routerLink]="['/edittask', toDo.id]" >Edit
 				<mat-icon>edit</mat-icon>
 			</button>
-			<button mat-raised-button color="primary">Delete
+			<button class="modify" mat-raised-button color="primary">Delete
 				<mat-icon>delete_forever</mat-icon>
 			</button>
 		</div>

@@ -1,9 +1,9 @@
 <div class="box">
 	<h1 mat-dialog-title>EDIT TASK</h1>
 	<div mat-dialog-content>
-		<mat-form-field appearance="outline">
-			<mat-label>Task title</mat-label>
-			<input [(ngModel)]="selectedToDo && selectedToDo.name" name="title" matInput placeholder="Title">
+		<mat-form-field [formGroup]="editTaskForm" appearance="outline">
+			<mat-label>{{selectedToDo?.name}}</mat-label>
+			<input formControlName="name" placeholder="Title" matInput>
 		</mat-form-field>
 		<!-- <mat-form-field appearance="outline">
 		<mat-label>Task priority</mat-label>
@@ -22,7 +22,7 @@
 	</mat-form-field> -->
 	</div>
 	<mat-dialog-actions>
-		<button class="mat-raised-button" (click)="onClose()">Close</button>
-		<button class="mat-raised-button mat-primary" (click)="onSave()">Save</button>
+		<button class="button-action" type="button" class="mat-raised-button" (click)="onClose()">Close</button>
+		<button class="button-action" type="button" class="mat-raised-button mat-primary" (click)="onSave()">Save</button>
 	</mat-dialog-actions>
 </div>
