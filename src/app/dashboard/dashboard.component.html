@@ -2,23 +2,23 @@
 	<form class="form-control">
 
 		<div class="input-button-row">
-			<button class="add-task" mat-flat-button color="primary" type="submit" [routerLink]="['/addtask']">Add New Task</button>
+			<button class="add-task" mat-flat-button color="primary" type="submit" [routerLink]="['/tasks/0/edit']">Add New Task</button>
 		</div>
 	</form>
 </div>
 	<div class="container">
-	<!-- <div *ngIf="!!toDo"> -->
+	<div *ngIf="!!toDoList">
 		<div *ngFor="let toDo of toDoList" >
 			<mat-checkbox class="example-margin" [(ngModel)]="toDo.isComplete"></mat-checkbox>
 			<span> {{toDo.name}}</span>
 			<br>
 			<span>  Date created: {{toDo.createdAt | date}}</span>
-			<button class="modify" mat-raised-button color="primary" [routerLink]="['/edittask', toDo.id]" >Edit
+			<button class="modify" mat-raised-button color="primary" [routerLink]="['/tasks/edit/', toDo.id]" >Edit
 				<mat-icon>edit</mat-icon>
 			</button>
-			<button class="modify" mat-raised-button color="primary">Delete
+			<button class="modify" mat-raised-button color="primary" (click)="onDelete(toDo.id)" >Delete
 				<mat-icon>delete_forever</mat-icon>
 			</button>
 		</div>
-	<!-- </div> -->
+	</div>
 </div>

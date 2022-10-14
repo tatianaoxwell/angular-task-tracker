@@ -51,11 +51,11 @@ export class AddTaskComponent implements OnInit {
   }
   private saveSuccess(newItem: IToDoItem): void {
     console.log('newToDo added: ', newItem);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/tasks']);
   }
 
   onClose() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/tasks']);
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

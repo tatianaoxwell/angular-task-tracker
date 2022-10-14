@@ -19,7 +19,7 @@ export class ToDoItemService {
   }
 
   getToDoById(id: number): Observable<IToDoItem> {
-    return this.http.get<IToDoItem>(`${this.apiURL}todo?id=${id}`);
+    return this.http.get<IToDoItem>(`${this.apiURL}todo/${id}?id=1`);
   }
 
 
@@ -29,8 +29,14 @@ return this.http.post<IToDoItem>(`${this.apiURL}todo?id=1`, newToDo);
 }
 
 /** Update/POST */
-updateToDo(updateToDo: IToDoItem): Observable<void>{
-return this.http.post<void>(`${this.apiURL}todo/${updateToDo.id}`, updateToDo);
+updateToDo(updateToDo: IToDoItem): Observable<IToDoItem>{
+return this.http.post<IToDoItem>(`${this.apiURL}todo/${updateToDo.id}?id=1`, updateToDo);
+}
+
+/** Delete */
+
+deleteToDo(id: number): Observable<void>{
+	return this.http.delete<void>(`${this.apiURL}todo/${id}?id=1`);
 }
 
 }
