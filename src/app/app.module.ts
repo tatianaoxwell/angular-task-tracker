@@ -22,25 +22,30 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, AddTaskComponent, EditTaskComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    AddTaskComponent,
+    EditTaskComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-	MatToolbarModule,
+    MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-	FormsModule,
-	MatButtonModule,
-	MatIconModule,
-	HttpClientModule,
-	AppRoutingModule,
-	MatSelectModule,
-	MatDatepickerModule,
-	MatRadioModule,
-	MatDialogModule,
-	MatNativeDateModule
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    AppRoutingModule,
   ],
   bootstrap: [AppComponent],
 })

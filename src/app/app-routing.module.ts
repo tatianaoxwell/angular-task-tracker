@@ -9,7 +9,8 @@ const routes: Routes = [
 	{ path: 'tasks', component: DashboardComponent },
 	{ path: 'tasks/0/edit', component: AddTaskComponent },
 	{ path: 'tasks/edit/:id', canDeactivate: [EditTaskGuard], component: EditTaskComponent },
-	{ path: '', redirectTo: 'dashboard', pathMatch: 'full'  }
+	{ path: '', redirectTo: 'dashboard', pathMatch: 'full'  },
+	{ path: '**', component: DashboardComponent }
 ]
 
 @NgModule({
