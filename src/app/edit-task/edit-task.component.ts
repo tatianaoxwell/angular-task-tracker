@@ -60,7 +60,6 @@ export class EditTaskComponent implements OnInit {
   }
 
   // TODO canDeactivate on save - fix
-  // TODO 500 Internal Server Error 
   onSave() {
     this.updateToDo(this.editTaskForm.getRawValue() as IToDoItem).subscribe();
   }

@@ -6,7 +6,7 @@ import { EditTaskComponent } from './edit-task.component';
 @Injectable({
   providedIn: 'root'
 })
-export class EditTaskGuard implements CanDeactivate<unknown> {
+export class EditTaskGuard implements CanDeactivate<EditTaskComponent> {
   canDeactivate(
     component: EditTaskComponent,
     currentRoute: ActivatedRouteSnapshot,
